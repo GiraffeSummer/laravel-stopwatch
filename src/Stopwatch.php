@@ -10,6 +10,18 @@ use Carbon\Carbon;
 class Stopwatch
 {
     private $start = null;
+    private $format = '%H:%I:%S';
+
+    /**
+     * Function that returns now as a time, this is to make sure we always get the same format
+     *
+     * @return Carbon
+     */
+    private function stamp()
+    {
+        return Carbon::now();
+    }
+
     /**
      * Create a new Stopwatch instance
      * this will also start the stopwatch timer
@@ -26,7 +38,7 @@ class Stopwatch
      */
     public function reset()
     {
-        $this->start = Carbon::now();
+        $this->start = $this->stamp();
     }
 
     /**
@@ -36,7 +48,7 @@ class Stopwatch
      */
     public function start()
     {
-        return $this->start->diff($this->start)->format('%H:%I:%S');
+        return $this->start->diff($this->start)->format($this->format);
     }
 
     /**
@@ -46,6 +58,6 @@ class Stopwatch
      */
     public function lap()
     {
-        return $this->start->diff(Carbon::now())->format('%H:%I:%S');
+        return $this->start->diff($this->stamp())->format($this->format);
     }
 }
