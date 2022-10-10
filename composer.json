@@ -1,0 +1,17 @@
+{
+    "name": "giraffesummer/stopwatch",
+    "require": {
+        "nesbot/carbon": "^2.62"
+    },
+    "autoload": {
+        "psr-4": {
+            "Giraffesummer\\Stopwatch\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "GiraffeSummer",
+            "email": "gidoselten@hotmail.com"
+        }
+    ]
+}
