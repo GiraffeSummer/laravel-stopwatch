@@ -1,6 +1,5 @@
 {
     "name": "giraffesummer/stopwatch",
-    "type": "library",
     "require": {
         "nesbot/carbon": "^2.62"
     },
@@ -14,6 +13,5 @@
             "name": "GiraffeSummer",
             "email": "gidoselten@hotmail.com"
         }
-    ],
-    "minimum-stability": "dev"
+    ]
 }
