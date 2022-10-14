@@ -10,7 +10,7 @@ use Carbon\Carbon;
 class Stopwatch
 {
     private $start = null;
-    private $format = '%H:%I:%S';
+    private $format = '%H:%I:%S.%f';
 
     /**
      * Function that returns now as a time, this is to make sure we always get the same format
@@ -20,6 +20,19 @@ class Stopwatch
     private function stamp()
     {
         return Carbon::now();
+    }
+
+    /**
+     * Format the date
+     *
+     * @param Carbon $stamp
+     * @return return formatted date string
+     */
+    private function format(Carbon $stamp)
+    {
+        $diff = $this->start->diff($stamp);
+
+        return $diff->format($this->format);
     }
 
     /**
@@ -48,7 +61,7 @@ class Stopwatch
      */
     public function start()
     {
-        return $this->start->diff($this->start)->format($this->format);
+        return $this->format($this->start);
     }
 
     /**
@@ -58,6 +71,6 @@ class Stopwatch
      */
     public function lap()
     {
-        return $this->start->diff($this->stamp())->format($this->format);
+        return $this->format($this->stamp());
     }
 }
