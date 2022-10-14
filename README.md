@@ -24,7 +24,7 @@ $sw = new Stopwatch();
 The functions Start and Lap will return a formatted time string.
 #### Start
  Start will return the starting time of the stopwatch.  
- This should always be: `00:00:00.000`
+ This should always be: `00:00:00.000`  
  usage:
  ```php
  $sw->start(); //00:00:00.000
@@ -32,7 +32,7 @@ The functions Start and Lap will return a formatted time string.
 #### Lap
  Lap is equivalent to the lap button on a stopwatch,   
  this will show the current elapsed time of the stopwatch,  
- since it was started or reset.
+ since it was started or reset.  
  usage:
  ```php
  $sw->lap(); //00:00:05.9547
